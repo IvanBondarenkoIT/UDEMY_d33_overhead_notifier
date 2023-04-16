@@ -1,6 +1,6 @@
 from tkinter import Tk, Canvas, PhotoImage, Button
 
-from JsonManage import JsonManage
+from apimanage import ApiManage
 
 
 class KanyeQuote:
@@ -24,5 +24,5 @@ class KanyeQuote:
         window.mainloop()
 
     def get_quote(self):
-        manage = JsonManage(url_to_get_json=self.url_to_get)
+        manage = ApiManage(url=self.url_to_get)
         self.canvas.itemconfig(self.quote_text, text=manage.get_json()["quote"])
